@@ -93,4 +93,8 @@
         <input #inputSomenteNumeros="ngModel" type="text" id="somenteNumeros" name="somenteNumeros" ngModel nsvRestringeCaracter="^[0-9]*$">
         <span>Model = {{ inputSomenteNumeros.value | json }}</span>
     </p>
+    <p>
+        <span>Com Valor:</span>
+        <input #inputComValor="ngModel" type="text" id="comvalor" name="comvalor" ngModel nsvComValor>
+    </p>
 </form>

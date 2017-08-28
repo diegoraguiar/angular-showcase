@@ -11,6 +11,7 @@ import { CnpjValidatorDirective } from './validators/cnpj.directive';
 import { ValidaIgualdadeValidatorDirective } from './validators/campo-igual.directive';
 import { ValidaDiferencaValidatorDirective } from './validators/campo-diferente.directive';
 import { IdadeMinimaValidatorDirective } from './validators/idade-minima.directive';
+import { ComValorDirective } from './directives/com-valor.directive';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import { IdadeMinimaValidatorDirective } from './validators/idade-minima.directi
     InscricaoEstadualValidatorDirective,
 
     RestringeCaracterDirective,
-    MascaraDirective
+    MascaraDirective,
+    ComValorDirective
   ],
   exports: [
     DataValidatorDirective,
@@ -38,7 +40,8 @@ import { IdadeMinimaValidatorDirective } from './validators/idade-minima.directi
     InscricaoEstadualValidatorDirective,
 
     RestringeCaracterDirective,
-    MascaraDirective
+    MascaraDirective,
+    ComValorDirective
   ]
 })
 export class CoreModule { }
