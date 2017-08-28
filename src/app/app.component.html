@@ -1,0 +1,96 @@
+<form #form="ngForm" novalidate>
+    <h2>Documentos Brasil</h2>
+    <p>
+        <span>CPF:</span>
+        <input #inputCpf="ngModel" type="text" id="cpf" name="cpf" ngModel nsvCpf>
+        <span>Campo Válido? {{ inputCpf.valid | json }}</span>
+    </p>
+    <p>
+        <span>CNPJ:</span>
+        <input #inputCnpj="ngModel" type="text" id="cnpj" name="cnpj" ngModel nsvCnpj>
+        <span>Campo Válido? {{ inputCnpj.valid | json }}</span>
+    </p>
+    <p>
+        <span>Estado / Inscricao Estadual:</span>
+        <input #inputInscricaoEstadualEstado="ngModel" type="text" id="uf" name="uf" ngModel>
+        <input #inputInscricaoEstadual="ngModel" type="text" id="inscricaoEstadual" name="inscricaoEstadual" ngModel [nsvInscricaoEstadual]="inputInscricaoEstadualEstado.value">
+        <span>Campo Válido? {{ inputInscricaoEstadual.valid | json }}</span>
+    </p>
+    <hr>
+    <h2>Data</h2>
+    <p>
+        <span>Formato Padrão: DD/MM/YYYY</span>
+        <input #inputDataPadrao="ngModel" type="text" id="dataPadrao" name="dataPadrao" ngModel maxlength="10" nsvData>
+        <span>Campo Válido? {{ inputDataPadrao.valid | json }}</span>
+    </p>
+    <p>
+        <span>Formato Customizado: MM/DD/YYYY</span>
+        <input #inputDataCustomizado="ngModel" type="text" id="dataCustomizada" name="dataCustomizada" ngModel maxlength="10" nsvData
+            nsvFormatoData="MM/DD/YYYY">
+        <span>Campo Válido? {{ inputDataCustomizado.valid | json }}</span>
+    </p>
+    <p>
+        <span>Idade Minima: 16 anos</span>
+        <input #inputIdadeMinima="ngModel" type="text" id="idadeMinima" name="idadeMinima" ngModel maxlength="10" nsvData nsvIdadeMinima>
+        <span>Campo Válido? {{ inputIdadeMinima.valid | json }}</span>
+    </p>
+    <p>
+        <span>Idade Minima: 21 anos</span>
+        <input #inputIdadeMinima21Anos="ngModel" type="text" id="idadeMinima21" name="idadeMinima21" ngModel maxlength="10" nsvData
+            nsvIdadeMinima="21">
+        <span>Campo Válido? {{ inputIdadeMinima21Anos.valid | json }}</span>
+    </p>
+    <hr>
+    <h2>Campos Iguais</h2>
+    <p>
+        <span>Nome / Nome Social:</span>
+        <input #inputNome="ngModel" type="text" id="nome" name="nome" ngModel>
+        <input #inputNomeSocial="ngModel" type="text" id="nomeSocial" name="nomeSocial" ngModel nsvValidaIgualdade="nome">
+        <span>Campo Válido? {{ inputNomeSocial.valid | json }}</span>
+    </p>
+    <hr>
+    <h2>Campos Diferentes</h2>
+    <p>
+        <span>Nome / Nome Social:</span>
+        <input #inputNomeDiferentes="ngModel" type="text" id="nomeDiferente" name="nomeDiferente" ngModel>
+        <input #inputNomeSocialDiferentes="ngModel" type="text" id="nomeSocialDiferente" name="nomeSocialDiferente" ngModel nsvValidaDiferenca="nomeDiferente">
+        <span>Campo Válido? {{ inputNomeSocialDiferentes.valid | json }}</span>
+    </p>
+    <hr>
+    <h2>Input - Máscaras</h2>
+    <p>
+        <span>CPF:</span>
+        <input #inputMascaraCpf="ngModel" type="text" id="mascaraCpf" name="mascaraCpf" ngModel nsvMascara="000.000.000-00">
+    </p>
+    <p>
+        <span>CPF / Mantém Mascara Model:</span>
+        <input #inputMascaraCpf="ngModel" type="text" id="mascaraCpfMMM" name="mascaraCpfMMM" ngModel nsvMascara="000.000.000-00"
+            [nsvManterCaracteres]="true">
+    </p>
+    <p>
+        <span>Telefone:</span>
+        <input #inputMascaraTelefone="ngModel" type="text" id="mascaraTelefone" name="mascaraTelefone" ngModel nsvMascara="(00) 0000-0000">
+    </p>
+    <p>
+        <span>Celular:</span>
+        <input #inputMascaraCelular="ngModel" type="text" id="mascaraCelular" name="mascaraCelular" ngModel nsvMascara="(00) 00000-0000">
+    </p>
+    <hr>
+    <h2>Input - Restringe</h2>
+    <p>
+        <span>Somente Letras:</span>
+        <input #inputSomenteLetras="ngModel" type="text" id="somenteLetras" name="somenteLetras" ngModel nsvRestringeCaracter="^[a-z]*$">
+        <span>Model = {{ inputSomenteLetras.value | json }}</span>
+    </p>
+    <p>
+        <span>Somente Letras com espaço:</span>
+        <input #inputSomenteLetrasComEspaco="ngModel" type="text" id="somenteLetrasComEspaco" name="somenteLetrasComEspaco" ngModel
+            nsvRestringeCaracter="^[a-z\s]*$">
+        <span>Model = {{ inputSomenteLetrasComEspaco.value | json }}</span>
+    </p>
+    <p>
+        <span>Somente Números:</span>
+        <input #inputSomenteNumeros="ngModel" type="text" id="somenteNumeros" name="somenteNumeros" ngModel nsvRestringeCaracter="^[0-9]*$">
+        <span>Model = {{ inputSomenteNumeros.value | json }}</span>
+    </p>
+</form>
