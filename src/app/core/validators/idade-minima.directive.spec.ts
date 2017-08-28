@@ -69,11 +69,11 @@ describe('directive: IdadeMinimaValidatorDirective - Idade Padrao: 16 anos', () 
     const yyyy: any = today.getFullYear();
 
     if (dd < 10) {
-      dd = '0' + dd
+      dd = '0' + dd;
     }
 
     if (mm < 10) {
-      mm = '0' + mm
+      mm = '0' + mm;
     }
 
     component.data = `${dd}/${mm}/${yyyy}`;
@@ -95,11 +95,11 @@ describe('directive: IdadeMinimaValidatorDirective - Idade Padrao: 16 anos', () 
     const yyyy: any = today.getFullYear() - 17;
 
     if (dd < 10) {
-      dd = '0' + dd
+      dd = '0' + dd;
     }
 
     if (mm < 10) {
-      mm = '0' + mm
+      mm = '0' + mm;
     }
 
     component.data = `${dd}/${mm}/${yyyy}`;
@@ -181,11 +181,11 @@ describe('directive: IdadeMinimaValidatorDirective - Idade Como Parametro: 18 an
     const yyyy: any = today.getFullYear();
 
     if (dd < 10) {
-      dd = '0' + dd
+      dd = '0' + dd;
     }
 
     if (mm < 10) {
-      mm = '0' + mm
+      mm = '0' + mm;
     }
 
     component.data = `${dd}/${mm}/${yyyy}`;
@@ -207,11 +207,11 @@ describe('directive: IdadeMinimaValidatorDirective - Idade Como Parametro: 18 an
     const yyyy: any = today.getFullYear() - 20;
 
     if (dd < 10) {
-      dd = '0' + dd
+      dd = '0' + dd;
     }
 
     if (mm < 10) {
-      mm = '0' + mm
+      mm = '0' + mm;
     }
 
     component.data = `${dd}/${mm}/${yyyy}`;

@@ -1,3 +1,3 @@
 export interface InscricaoEstadual {
-    validar(inscricaoEstadual: string): boolean
+    validar(inscricaoEstadual: string): boolean;
 }

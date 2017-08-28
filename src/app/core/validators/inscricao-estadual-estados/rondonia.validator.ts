@@ -26,7 +26,7 @@ export class Rondonia implements InscricaoEstadual {
         const ultimo_digito = inscricaoEstadual.substring(inscricaoEstadual.length - 1, inscricaoEstadual.length);
         const digitos = inscricaoEstadual.substring(0, inscricaoEstadual.length - 1);
 
-        return Number(ultimo_digito) === this.calcula_digito_verificador(digitos)
+        return Number(ultimo_digito) === this.calcula_digito_verificador(digitos);
     }
 
     private calcula_digito_verificador(digitos: string, peso = 6): number {

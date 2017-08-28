@@ -64,7 +64,7 @@ export class Bahia implements InscricaoEstadual {
         const pesosPrimeiroDigito = [9, 8, 7, 6, 5, 4, 3, 2];
 
         let mod = 11;
-        if (Number(inscricao.charAt(1)) !== 6 && Number(inscricao.charAt(1)) !== 7 && Number(inscricao.charAt(1)) != 9) {
+        if (Number(inscricao.charAt(1)) !== 6 && Number(inscricao.charAt(1)) !== 7 && Number(inscricao.charAt(1)) !== 9) {
             mod = 10;
         }
 

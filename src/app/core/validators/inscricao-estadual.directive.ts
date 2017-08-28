@@ -27,8 +27,8 @@ export class InscricaoEstadualValidatorDirective implements Validator {
         } else {
             return {
                 inscricaoEstadual: false
-            }
-        };
+            };
+        }
     }
 
     private validaInscricaoEstadual(inscricaoEstadual: string): boolean {
