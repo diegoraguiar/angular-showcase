@@ -23,7 +23,7 @@ export class RestringeCaracterDirective implements OnInit, ControlValueAccessor 
         valor: null
     };
 
-    private regexpPadrao = '^[a-z\s]*$';
+    private regexpPadrao = '^[a-z\\s]*$';
 
     private _onChange = (_: any) => { };
 
