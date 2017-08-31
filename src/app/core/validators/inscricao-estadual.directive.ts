@@ -14,11 +14,11 @@ import { InscricaoEstadualFactory } from './inscricao-estadual-estados/inscricao
 })
 export class InscricaoEstadualValidatorDirective implements Validator {
 
-    private _Uf;
+    private _uf;
 
     @Input('nsvInscricaoEstadual')
     public set inscricaoEstadual(value: string) {
-        this._Uf = value;
+        this._uf = value;
     }
 
     validate(control: AbstractControl) {
@@ -26,13 +26,15 @@ export class InscricaoEstadualValidatorDirective implements Validator {
             return null;
         } else {
             return {
-                inscricaoEstadual: false
+                inscricaoEstadual: {
+                    valid: false
+                }
             };
         }
     }
 
     private validaInscricaoEstadual(inscricaoEstadual: string): boolean {
-        const instancia = InscricaoEstadualFactory.criaInstancia(this._Uf);
+        const instancia = InscricaoEstadualFactory.criaInstancia(this._uf);
 
         if (instancia) {
             return instancia.validar(inscricaoEstadual);

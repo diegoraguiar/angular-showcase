@@ -41,7 +41,9 @@ export class ValidaIgualdadeValidatorDirective implements Validator {
 
     if (elementoRepetido && elemento !== elementoRepetido.value) {
       return {
-        validaIgualdade: false
+        validaIgualdade: {
+          valid: false
+        }
       };
     }
 

@@ -40,7 +40,9 @@ export class ValidaDiferencaValidatorDirective implements Validator {
 
     if (elementoRepetido && elemento === elementoRepetido.value) {
       return {
-        validaDiferenca: false
+        validaDiferenca: {
+          valid: false
+        }
       };
     }
 

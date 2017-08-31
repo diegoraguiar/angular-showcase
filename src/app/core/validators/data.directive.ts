@@ -31,7 +31,9 @@ export class DataValidatorDirective implements Validator {
         }
 
         return {
-            data: false
+            data: {
+                valid: false
+            }
         };
     }
 

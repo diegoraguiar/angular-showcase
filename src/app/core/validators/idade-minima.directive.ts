@@ -44,7 +44,9 @@ export class IdadeMinimaValidatorDirective implements Validator {
             return null;
         } else {
             return {
-                maiorDezesseisAnos: false
+                idadeMinima: {
+                    valid: false
+                }
             };
         }
     }
